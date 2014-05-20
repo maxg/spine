@@ -1,0 +1,21 @@
+<Title:>
+  Spine
+
+<Head:>
+  <meta name="viewport" content="width=device-width">
+
+<Body:>
+  <div class="container">
+    <h1>Spine</h1>
+    {{each spine.prompts as #prompt,#i}}
+    <div class="row">
+      <div class="col-sm-3"><textarea>{{#prompt.text}}</textarea></div>
+      <div class="col-sm-6"><textarea>{{spine.responses[_session.userId][#prompt.id]}}</textarea></div>
+    </div>
+    {{/}}
+    <div class="row">
+      <div class="col-sm-3">
+        <button on-click="page.add()" class="btn btn-default">+</button>
+      </div>
+    </div>
+  </div>
